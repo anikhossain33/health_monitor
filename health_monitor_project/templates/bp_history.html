@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}BP History{% endblock %}
+
+{% block content %}
+<div class="card auth-card">
+    <h1 class="auth-title">BP History</h1>
+
+    <div style="text-align:center; margin-bottom:15px;">
+        <a class="btn" href="{% url 'add_bp'%}">Add New Reading</a>
+    
+    </div>
+
+    {% if reading %}
+    <table class="table">
+        <thread>
+            <tr>
+                <th>Date</th>
+                <th>Systolic</th>
+                <th>Diastolic</th>
+                <th>Heart Rate</th>
+            </tr>
+        </thread>
+        <tbody>
+            {% for r in readings %}
+            <tr>
+                <td>{{ r.created_at|date:"d M Y, H:i" }}</td>
+                <td>{{ r.systolic }}</td>
+                <td>{{ r.diastolic }}</td>
+                <td>
+                    {% if r.heart_rate %}
+                    {{ r.heart_rate }}
+                    {% else %}
+                    -
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}            
+        </tbody>
+    </table>
+  {% else %}
+    <p style="text-align:center;">No readings yet</p>
+  {% endif %}
+
+</div>
+{% endblock %}

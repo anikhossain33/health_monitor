@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{%block title %}SmartMonitor{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="brand">Smart<span>Monitor</span></div>
+
+        <nav class="navlinks">
+            <a href="{% url 'dashboard' %}">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Contact us</a>
+            <a href="{% url 'dashboard' %}" >My account</a>
+         </nav>
+
+         <div class="navicons">
+            <span class="bell">🔔</span>
+         </div>
+    </header>
+
+    <main class="page">
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

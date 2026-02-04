@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Blood Pressure{% endblock %}
+
+{% block content %}
+<div class="page-wrapper">
+
+    <div class="bp-card">
+        <h1 class="bp-title">Blood Pressure</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            <label class="bp-label">Systolic Pressure (mmHg):</label>
+            <input type="number" name="systolic" class="bp-input" placeholder="e.g 120" required>
+            
+            <label class="bp-label">Diastolic Pressure (mmHg):</label>
+            <input type="number" name="diastolic" class="bp-input" placeholder="e.g 80" required>
+            
+            <label class="bp-label">Heart Rate (bpm):</label>
+            <input type="number" name="heart_rate" class="bp-input" placeholder="e.g 72">
+            
+            <button type="submit" class="bp-btn">Save Reading</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

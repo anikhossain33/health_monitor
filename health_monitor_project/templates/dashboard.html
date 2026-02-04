@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{%block content%}
+<div class="dashboard-wrap">
+    <h1 class="dash-title"></h1>Patient Dashboard</h1>
+    <p class="dash-sub">Welcome, Patient!</p>
+    <p class="dash-sub">Here's your health overview.</p>
+
+    <div class="dash-sections">
+        <div class="dash-section">Blood Pressure</div>
+        <div class="dash-section">Glucose</div>
+    </div>
+    <div class="dash-grid">
+        <a class="dash-btn" href="{% url 'add_bp' %}">Add BP</a>
+        <a class="dash-btn" href="{% url 'bp_history' %}">View History</a>
+        <a class="dash-btn" href="#">Add Glucose</a>
+        <a class="dash-btn" href="#">Doctor Helpline</a>
+        <a class="dash-btn" href="#">Chart</a>
+        <a class="dash-btn" href="#">Doctor Feedback</a>
+    </div>
+</div>
+{% endblock %}
