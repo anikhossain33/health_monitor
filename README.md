@@ -8,7 +8,7 @@ Password: Westminster2026
 
 Doctor login:
 Username: anikhoss01@gmail.com
-Password: 17052004An
+Password: 17052001An
 
 ## Technology
 - Django (Python)
